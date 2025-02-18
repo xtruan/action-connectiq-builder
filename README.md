@@ -26,7 +26,7 @@ The following inputs are available under the `with` keyword:
 
 - `devices`: Optional. [Default: empty] The comma separated list of device IDs to on which the opration will be run (test only). If this input is used, the `device` option will be ignored. This input was created so that instead of running tests on multiple separate containers, you can pass the list into one container and use that to run all tests.
 
-- `check_type_level`: Required. [Default: 2] The type level check used when compiling the application with `monkeyc`. The available options (0-3) are described [here](https://developer.garmin.com/connect-iq/monkey-c/monkey-types/).
+- `type_check_level`: Required. [Default: 2] The type level check used when compiling the application with `monkeyc`. The available options (0-3) are described [here](https://developer.garmin.com/connect-iq/monkey-c/monkey-types/).
 
 - `certificate`: Optional. The base64 encoded version of the certificate to be used to compile the application. If not specified, a temporary certificate will be used for the test operation. For `PACKAGE` operation you must supply your own. Make sure to store it as a repository secret and add the variable name to your workflow. To convert your existing developer key into a base64 encoded version run `cat my_developer_key | base64 -w0`. The `-w0` argument is important because it will not wrap the lines (no line breaks).
 
